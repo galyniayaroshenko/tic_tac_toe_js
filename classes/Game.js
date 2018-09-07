@@ -11,8 +11,8 @@ class Game {
 		const newBoard = new Board(['', '', '', '', '', '', '', '', '']);
 		const player = new Player(parseInt(depth));
 		const starting = parseInt(startingPlayer);
-		const	maximizing = starting;
-		let	playerTurn = starting;
+		const maximizing = starting;
+		let playerTurn = starting;
 
 		board.className = '';
 		board.innerHTML = '<div class="cell-0"></div><div class="cell-1"></div><div class="cell-2"></div><div class="cell-3"></div><div class="cell-4"></div><div class="cell-5"></div><div class="cell-6"></div><div class="cell-7"></div><div class="cell-8"></div>';
