@@ -27,16 +27,12 @@ class Player {
 			return 0;
 		}
 
-		if (maximizing) {
-			return this._maximizing(board, callback, depth, -100, 'x', false);
-		} else { // eslint-disable-line
-			return this._maximizing(board, callback, depth, 100, 'o', true);
-		}
+		return maximizing ? this._maximizing(board, callback, depth, -100, 'x', false) : this._maximizing(board, callback, depth, 100, 'o', true);
 	}
 
 	/* private */
-	_maximizing(board, callback, depth, bestLowestPossibleValue, playerSymbol, maximizingTurn) {
-		let best = bestLowestPossibleValue; // Initializ best to the lowest possible value
+	_maximizing(board, callback, depth, possibleValue, playerSymbol, maximizingTurn) {
+		let best = possibleValue; // Initializ best to the lowest possible value
 
 		board.getAvailableMoves().forEach(index => { // Loop through all empty cells
 			const child = new Board(board.state.slice()); // Initialize a new board with the current state (slice() is used to create a new array and not modify the original)
